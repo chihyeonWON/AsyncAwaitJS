@@ -45,3 +45,13 @@ async function pickFruits() {
 
 pickFruits()
     .then(console.log);
+
+// 3. useful Promise APIs
+
+//Promise.all (병렬 처리)
+function pickAllFruits() {
+    return Promise.all([getApple(), getBanana()])
+        .then(fruits => fruits.join(' + ')); // 두개의 배열을 문자열로 받아서 합치는 join 메서드
+}
+pickAllFruits()
+    .then(console.log);
