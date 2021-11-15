@@ -55,3 +55,11 @@ function pickAllFruits() {
 }
 pickAllFruits()
     .then(console.log);
+
+// 배열로 전달된 프로미스 중 먼저 수행되는 프로미스를 호출하는 Promise.race 기능
+function pickOnlyOne() {
+    return Promise.race([getApple(), getBanana()]);
+}
+
+pickOnlyOne() 
+    .then(console.log);
